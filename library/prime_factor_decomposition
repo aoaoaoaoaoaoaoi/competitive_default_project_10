@@ -1,0 +1,26 @@
+//O(√n)
+
+void calcPrimeDecomposition() {
+	map<ll, ll>Lm;
+	for (ll i = 2; i <= 11; ++i) {
+		ll target = i;
+		ll mx = sqrt(target);
+		for (ll j = 2; j <= mx;) {
+ 
+			while (target % j == 0) {
+				++Lm[j];
+				target /= j;
+			}
+ 
+			if (j == 2) {
+				++j;
+			}
+			else {
+				j += 2;
+			}
+		}
+		if (target != 1) {
+			++Lm[target];
+		}
+	}
+}

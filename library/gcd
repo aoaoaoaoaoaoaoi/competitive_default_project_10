@@ -1,0 +1,16 @@
+//O(log n)
+
+ll getGcd(ll a, ll b) {
+	if (a < b) {
+		ll temp = b;
+		b = a;
+		a = temp;
+	}
+ 
+	ll r;
+	while ((r = a % b) != 0) {
+		a = b;
+		b = r;
+	}
+	return b;
+}
