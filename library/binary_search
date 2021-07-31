@@ -1,0 +1,19 @@
+//log(N)
+//lower_bound 指定したkey以上の要素の一番左側
+//upper_bound 指定したkeyより大きい要素の一番左側
+//https://pyteyon.hatenablog.com/entry/2019/02/20/1941//
+
+    int ok = -1;
+    int ng = 要素数;
+    while(ng - ok > 1){
+      int mid = (ok + ng) / 2;
+      if(b[mid] <= a[ai]){
+        ok = mid;
+      }else{
+        ng = mid;
+      }
+    }
+
+//条件を満たす中で最大のものがok
+//-1<=ok<ng(要素数)
+//参考：https://www.forcia.com/blog/001434.html
