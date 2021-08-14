@@ -8,6 +8,13 @@ struct UnionFind {
 		else return uf[target] = root(uf[target]);
 	}
  
+	int size(int target) {
+    if(0 <= uf[target]){
+      return -uf[root(target)];
+    }
+      return -uf[target];
+  	}
+
 	void merge(int a, int b) {
 		a = root(a);
 		b = root(b);

@@ -1,0 +1,11 @@
+void dfs(int current, int parent){
+  cout << current + 1 << " ";
+  for(auto next : c[current]){
+    if(next == parent){
+      continue;
+    }else{
+      dfs(next, current);
+      cout << current + 1 << " ";
+    }
+  }
+}
