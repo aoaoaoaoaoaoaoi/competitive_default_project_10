@@ -15,51 +15,57 @@ const double PI = acos(-1);
 //priority_queue<ll, vector<ll>, greater<ll>>que; 小さい順の優先度つきキュー
 
 /***********************************************************************/
+	
+  map<ll, ll>Lm;
+void calcPrimeDecomposition(int target) {
+		ll mx = sqrt(target);
+		for (ll j = 2; j <= mx;) {
+ 
+			while (target % j == 0) {
+				++Lm[j];
+				target /= j;
+			}
+ 
+			if (j == 2) {
+				++j;
+			}
+			else {
+				j += 2;
+			}
+		}
+		if (target != 1) {
+			++Lm[target];
+		}
+}
 
-struct UnionFind {
-	vector<int>uf;
+bool isCalcPrimeDecomposition(int target) {
+		ll mx = sqrt(target);
+		for (ll j = 2; j <= mx;) {
  
-	UnionFind(int size) :uf(size, -1) {};
+			while (target % j == 0) {
+				if(0 < Lm[j]){
+          return false;
+        }
+				target /= j;
+			}
  
-	int root(int target) {
-		if (uf[target] < 0)return target;
-		else return uf[target] = root(uf[target]);
-	}
- 
-  int size(int target) {
-    if(0 <= uf[target]){
-      return -uf[root(target)];
-    }
-    return -uf[target];
-  }
-
-	void merge(int a, int b) {
-		a = root(a);
-		b = root(b);
-		if (a == b)return;
-		if (uf[b] < uf[a])swap(a, b);
-		uf[a] += uf[b];
-		uf[b] = a;
-	}
-};
+			if (j == 2) {
+				++j;
+			}
+			else {
+				j += 2;
+			}
+		}
+		if (target != 1) {
+      if(0 < Lm[target]){
+        return false;
+      }
+		}
+    return true;
+}
 
 int main() {
-  int n; cin >> n;
-  vector<tuple<ll, ll, ll>> edge(n-1);
+  int n , m; cin >> n >> m;
 
-  rep(i, n-1){
-    int u, v; cin >> u >> v; --u; --v; 
-    ll w; cin >> w;
-    edge[i] = make_tuple(w, u, v);
-  }
-
-  sort(edge.begin(), edge.end());
-  ll ans = 0;
-  UnionFind u = UnionFind(n);
-  for(auto e : edge){
-    ans += get<0>(e) * u.size(get<1>(e)) * u.size(get<2>(e));
-    u.merge(get<1>(e), get<2>(e));
-  }
-
-  cout << ans << endl;
+    cout << ans << endl;
 }
