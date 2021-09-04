@@ -15,57 +15,9 @@ const double PI = acos(-1);
 //priority_queue<ll, vector<ll>, greater<ll>>que; 小さい順の優先度つきキュー
 
 /***********************************************************************/
-	
-  map<ll, ll>Lm;
-void calcPrimeDecomposition(int target) {
-		ll mx = sqrt(target);
-		for (ll j = 2; j <= mx;) {
- 
-			while (target % j == 0) {
-				++Lm[j];
-				target /= j;
-			}
- 
-			if (j == 2) {
-				++j;
-			}
-			else {
-				j += 2;
-			}
-		}
-		if (target != 1) {
-			++Lm[target];
-		}
-}
-
-bool isCalcPrimeDecomposition(int target) {
-		ll mx = sqrt(target);
-		for (ll j = 2; j <= mx;) {
- 
-			while (target % j == 0) {
-				if(0 < Lm[j]){
-          return false;
-        }
-				target /= j;
-			}
- 
-			if (j == 2) {
-				++j;
-			}
-			else {
-				j += 2;
-			}
-		}
-		if (target != 1) {
-      if(0 < Lm[target]){
-        return false;
-      }
-		}
-    return true;
-}
 
 int main() {
-  int n , m; cin >> n >> m;
-
-    cout << ans << endl;
+  int l, q; cin >> l >> q;
+  
+  cout << ans << endl;
 }
