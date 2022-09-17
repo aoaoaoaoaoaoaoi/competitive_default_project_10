@@ -1,0 +1,8 @@
+//0-n-1までの部分集合
+for (int i = 0; i < (1 << length); ++i){
+    for (int j = 0; j < length; ++j){
+        if (i & (1 << j)){
+            //jのビットが立ってる
+        }
+    }
+}

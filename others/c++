@@ -1,0 +1,7 @@
+最後の文字を削除するときは
+erase(s.size()-1)
+substrは遅い
+
+set
+insert
+find set.end()

@@ -1,3 +1,5 @@
+//重みなしグラフ
+//最短経路はBFS
 void dfs(int current, int parent){
   cout << current + 1 << " ";
   for(auto next : c[current]){

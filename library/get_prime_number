@@ -1,0 +1,16 @@
+//エラトステネスの篩
+//O(nloglogn)
+#define MAXP 1000005
+vector<ll> primeList;
+void construct_plist(){
+  vector<bool> fl(MAXP,false);
+  for(int i=2;i<MAXP;i++){
+    if(fl[i]){
+        continue;
+    }
+    primeList.push_back(i);
+    for(int j=i;j<MAXP;j+=i){
+        fl[j]=true;
+    }
+  }
+}

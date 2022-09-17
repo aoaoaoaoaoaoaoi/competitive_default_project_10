@@ -1,4 +1,5 @@
 //O(√n)
+//2-11までの数の素因数分解
 
 void calcPrimeDecomposition() {
 	map<ll, ll>Lm;

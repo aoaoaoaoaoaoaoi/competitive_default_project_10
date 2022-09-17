@@ -5,6 +5,7 @@
 // *it イテレータから要素取得 *prev(it) イテレータからひとつ前の要素取得
 
 //upper_bound 指定したkeyより大きい要素の一番左側
+//https://qiita.com/ganyariya/items/33f1326154b85db465c3
 
 // 素の二分探索
 //https://pyteyon.hatenablog.com/entry/2019/02/20/1941//
